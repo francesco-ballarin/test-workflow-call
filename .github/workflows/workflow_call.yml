@@ -13,3 +13,5 @@ jobs:
         run: |
           echo $PWD
           ls -alrtR
+      - name: Do something
+        run: bash my_script.sh

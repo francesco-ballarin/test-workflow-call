@@ -13,5 +13,13 @@ jobs:
         run: |
           echo $PWD
           ls -alrtR
+      - name: Set environment variable containing the path of the workflow call repository
+        run: |
+          echo "GITHUB_WORKFLOW_CALL_PATH=_workflow_call_repo" >> $GITHUB_ENV
+      - name: Clone workflow call repository
+        uses: actions/checkout@v2
+        with:
+          repository: francesco-ballarin/test-workflow-call
+          path: ${{ env.GITHUB_WORKFLOW_CALL_PATH }}
       - name: Do something
-        run: bash my_script.sh
+        run: bash ${GITHUB_WORKFLOW_CALL_PATH}/my_script.sh

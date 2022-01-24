@@ -5,4 +5,4 @@ on:
 
 jobs:
   call_workflow:
-    uses: francesco-ballarin/test-workflow-call/workflow.yml@main
+    uses: francesco-ballarin/test-workflow-call/workflow_call.yml@main

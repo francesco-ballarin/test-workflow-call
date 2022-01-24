@@ -1,0 +1,8 @@
+name: CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call_workflow:
+    uses: francesco-ballarin/test-workflow-call/workflow.yml@main
